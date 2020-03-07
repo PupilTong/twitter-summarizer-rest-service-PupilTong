@@ -7,7 +7,7 @@ import json
 from ffmpegQueue import *
 
 app = Flask(__name__)
-app.appurl = 'https://127.0.0.1:5000/'
+app.appurl = 'http://hw5.onic.xyz/'
 
 
 @app.route('/status/<string:uuid>',methods=['GET'])
@@ -61,4 +61,4 @@ if __name__ == '__main__':
     access_token = conf.get('auth', 'access_token')
     access_token_secret = conf.get('auth', 'access_secret')
     app.videoApi = TwitterVideoSum(consumer_key, consumer_secret, access_token, access_token_secret)
-    app.run(debug = True,host='127.0.0.1',port = 5000)
+    app.run(debug = True,host='0.0.0.0',port = 6666)

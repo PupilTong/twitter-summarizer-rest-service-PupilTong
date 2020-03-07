@@ -102,10 +102,13 @@ class VideoApi:
                 handle.close()
         except:
             subprocess.run("cp img.jpg " + directory + "/"+keyword+"/" + filename,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
-        subprocess.run("ffmpeg -i " + directory + "/"+keyword+"/" + filename +" -vf \"scale=1280:720,drawtext=text=\'" +text + "\':fontcolor=blue:fontsize=40:x=10:y=20:\" " + directory + "/"+keyword+"/" +  filename + ".png",stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
-        subprocess.run("ffmpeg -loop 1 -s 1280x720 -t 3 -i " + directory + "/"+keyword+"/" + filename +".png -pix_fmt yuv420p " + directory + "/"+keyword+"/" + filename +".ts",stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
+        subprocess.run("ffmpeg -i " + directory + "/"+keyword+"/" + filename +" -vf \"scale=1280:720,drawtext=text=\'" +text + "\':fontcolor=blue:fontsize=40:x=10:y=20:\" " + directory + "/"+keyword+"/" +  filename + ".jpg",stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
+        subprocess.run("ffmpeg -loop 1 -s 1280x720 -t 3 -i " + directory + "/"+keyword+"/" + filename +".jpg -pix_fmt yuv420p " + directory + "/"+keyword+"/" + filename +".ts",stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
         subprocess.run("ffmpeg -i \"concat:"+ directory + "/"+keyword+"/" + "sum.ts|" + directory + "/"+keyword+"/" + filename +".ts\" -y -c copy "+ directory + "/"+keyword+"/" + "sum_temp.ts",stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,shell=True)
-        os.rename(directory + "/"+keyword+"/" + "sum_temp.ts",directory + "/"+keyword+"/" + "sum.ts")
+        try:
+            os.rename(directory + "/"+keyword+"/" + "sum_temp.ts",directory + "/"+keyword+"/" + "sum.ts")
+        except:
+            pass
         
         
         #os.remove(directory+"/" + filename)
