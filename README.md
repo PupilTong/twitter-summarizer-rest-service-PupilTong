@@ -1,44 +1,59 @@
-# Twitter hashtag photo video summary generator
+# Twitter hashtag photo video summary generator - Restful Api Version
 ## requirement
-python > 3.5
+python > 3.6
+## Api Definition
+### Start a task
+```bash
+curl -i -H "Content-Type: application/json" -X POST -d '{"keyword":"book"}' https://hw5.onic.xyz/
+```
+#### return
+```json
+{
+ "uuid": "3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
+ "get_status": "https://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
+ "get_video": "https://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505"
+}
+```
+### Check status
+```bash
+curl -i -X GET https://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+```
+#### return
+```json
+{
+ "uuid": "3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
+ "percentage": -1, 
+ "status": "finished/doesnt exist"
+}
+```
+### Get Video
+```bash
+curl -i -X GET https://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+```
+#### return
+
+file it self
+
 ## Deployment Guide
 ### Environment Configuration
 ```bash
 git clone https://github.com/BUEC500C1/video-PupilTong.git
 cd video-PupilTong
 pip3 -r requirements.txt
-python3 Sample.py
+python3 rest.py
 ```
 ### import your own Twitter API key info
-Keys should be stores as global varibles like this:
+Keys should be stores in 'key file:
 ```python
-consumer_key:str = ""
-consumer_secret:str = ""
-access_token:str = ""
-access_token_secret:str = ""
+[auth]
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
 ```
-We recommond you store it in a python file and import it in the Sample.py, like this:
-```python
-from key import *
-```
-### Run sample program
-The program will ask you a series parmaters, an example is given as follow:
-```bash
-input hashtags  u choosed, spilt them with ',': cats,dogs
-input video storage dir: .
-how many photos do u want: 10
-```
-This means we are trying to search 10 tweets which is attached at least one photo for each hashtag, "#cats" or "#dogs, and tell the program where to store the summary video.
-### Gui shows progress
-on programm running, you may see something like this:
-```bash
-Current progress:2/2 | Current Keywords: dogs|################    | 90%
-```
-This means our program now is processing the 2nd hashtag, dogs, you gave, and it has finished 90% of whole workload.
 ### Demo
-cats: https://youtu.be/trIAZ7TxWe0
-
-dogs: https://youtu.be/RZtzyB9p-WA
+https://hw5.onic.xyz
+# Too Old;DR 
 ## Module ffmpegQueue.py
 This module is able to convert a tuple of texts and a tuple of images' url to a summary video.
 ### Architechture
