@@ -61,4 +61,4 @@ if __name__ == '__main__':
     access_token = conf.get('auth', 'access_token')
     access_token_secret = conf.get('auth', 'access_secret')
     app.videoApi = TwitterVideoSum(consumer_key, consumer_secret, access_token, access_token_secret)
-    app.run(debug = True)
+    app.run(debug = True,host='0.0.0.0',port = 6666)
