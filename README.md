@@ -1,4 +1,31 @@
 # Twitter hashtag photo video summary generator - Restful Api Version
+# Feel CRAZY about the FOOLISH CORS POLICY AND NGINX MANUAL
+use 
+
+add_header Access-Control-Allow-Origin '*' always; 
+
+TO ADD A 'ALLOW ALL' Header on your response
+
+like this:
+```
+server {
+
+        server_name hw5.onic.xyz;
+        location / {
+        add_header Access-Control-Allow-Origin '*' always;
+        proxy_pass http://127.0.0.1:6666;
+        proxy_http_version 1.1;
+        proxy_set_header   Host $host;
+        proxy_set_header Content-Type 'application/json';
+        }
+
+listen 80;
+}
+
+```
+## AND DONT FORGET ADDING 'always' IN THE END
+Offical and popular instructions never told u.
+
 ## requirement
 python > 3.6
 
