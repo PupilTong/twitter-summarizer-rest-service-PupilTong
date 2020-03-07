@@ -12,13 +12,13 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"keyword":"book"}' http
 ```json
 {
  "uuid": "3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
- "get_status": "http://127.0.0.1:5000/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
- "get_video": "http://127.0.0.1:5000/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505"
+ "get_status": "http://hw5.onic.xyz:6666/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
+ "get_video": "http://hw5.onic.xyz:6666/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505"
 }
 ```
 ### Check status
 ```bash
-curl -i -X GET http://127.0.0.1:5000/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+curl -i -X GET http://hw5.onic.xyz:6666/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 #### return
 ```json
@@ -30,7 +30,7 @@ curl -i -X GET http://127.0.0.1:5000/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 ### Get Video
 ```bash
-curl -i -X GET http://127.0.0.1:5000/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+curl -i -X GET http://hw5.onic.xyz:6666/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 #### return
 
