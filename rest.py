@@ -7,7 +7,7 @@ import json
 from ffmpegQueue import *
 
 app = Flask(__name__)
-app.appurl = 'http://hw5.onic.xyz/'
+app.appurl = 'http://hw5.onic.xyz:6666/'
 
 
 @app.route('/status/<string:uuid>',methods=['GET'])
