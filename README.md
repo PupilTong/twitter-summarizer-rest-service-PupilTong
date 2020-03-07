@@ -1,6 +1,8 @@
 # Twitter hashtag photo video summary generator - Restful Api Version
 ## requirement
 python > 3.6
+
+ffmpeg
 ## Api Definition
 ### Start a task
 ```bash
@@ -51,8 +53,6 @@ consumer_secret = ""
 access_token = ""
 access_token_secret = ""
 ```
-### Demo
-http://hw5.onic.xyz
 # Too Old;DR 
 ## Module ffmpegQueue.py
 This module is able to convert a tuple of texts and a tuple of images' url to a summary video.
