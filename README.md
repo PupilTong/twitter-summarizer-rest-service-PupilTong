@@ -4,19 +4,19 @@ python > 3.6
 ## Api Definition
 ### Start a task
 ```bash
-curl -i -H "Content-Type: application/json" -X POST -d '{"keyword":"book"}' https://hw5.onic.xyz/
+curl -i -H "Content-Type: application/json" -X POST -d '{"keyword":"book"}' http://hw5.onic.xyz/
 ```
 #### return
 ```json
 {
  "uuid": "3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
- "get_status": "https://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
- "get_video": "https://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505"
+ "get_status": "http://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505", 
+ "get_video": "http://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505"
 }
 ```
 ### Check status
 ```bash
-curl -i -X GET https://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+curl -i -X GET http://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 #### return
 ```json
@@ -28,7 +28,7 @@ curl -i -X GET https://hw5.onic.xyz/status/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 ### Get Video
 ```bash
-curl -i -X GET https://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505
+curl -i -X GET http://hw5.onic.xyz/video/3f3d3fb0-b175-4a58-b8ec-9923813d0505
 ```
 #### return
 
@@ -37,7 +37,7 @@ file it self
 ## Deployment Guide
 ### Environment Configuration
 ```bash
-git clone https://github.com/BUEC500C1/video-PupilTong.git
+git clone http://github.com/BUEC500C1/video-PupilTong.git
 cd video-PupilTong
 pip3 -r requirements.txt
 python3 rest.py
@@ -52,7 +52,7 @@ access_token = ""
 access_token_secret = ""
 ```
 ### Demo
-https://hw5.onic.xyz
+http://hw5.onic.xyz
 # Too Old;DR 
 ## Module ffmpegQueue.py
 This module is able to convert a tuple of texts and a tuple of images' url to a summary video.
