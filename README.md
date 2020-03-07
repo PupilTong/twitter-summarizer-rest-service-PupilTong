@@ -39,7 +39,7 @@ file it self
 ```bash
 git clone http://github.com/BUEC500C1/video-PupilTong.git
 cd video-PupilTong
-pip3 -r requirements.txt
+pip3 -i requirements.txt
 python3 rest.py
 ```
 ### import your own Twitter API key info
